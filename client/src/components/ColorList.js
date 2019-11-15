@@ -6,7 +6,7 @@ const initialColor = {
   code: { hex: "" }
 };
 
-const ColorList = ({ colors, updateColors }) => {
+const ColorList = ({ colors, updateColors, props }) => {
   console.log(colors);
   const [editing, setEditing] = useState(false);
   const [colorToEdit, setColorToEdit] = useState(initialColor);
@@ -62,6 +62,11 @@ const ColorList = ({ colors, updateColors }) => {
       console.log(error);
     })
   };
+
+  const LogOut =() => {
+    sessionStorage.removeItem("token");
+    props.history.push("/");
+  }
 
   return (
     <div className="colors-wrap">
@@ -147,7 +152,14 @@ const ColorList = ({ colors, updateColors }) => {
           </div>
       </form>
       )}
+      <div className="button-row">
+        <button style={{'background-color': 'red'}} onClick={LogOut}>Log Out</button>
+      </div>
+
+      
       <div className="spacer" />
+      
+      
     </div>
   );
 };

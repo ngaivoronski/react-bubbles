@@ -70,7 +70,7 @@ const ColorList = ({ colors, updateColors, props }) => {
 
   return (
     <div className="colors-wrap">
-      <p>colors</p>
+      <h2>colors</h2>
       <ul>
         {colors.map(color => (
           <li key={color.color} onClick={() => editColor(color)}>
@@ -93,7 +93,7 @@ const ColorList = ({ colors, updateColors, props }) => {
       </ul>
       {editing && (
         <form onSubmit={saveEdit}>
-          <legend>Edit color</legend>
+          <legend style={{'color': 'yellow'}}>Edit color</legend>
           <label>
             color name:
             <input
@@ -116,7 +116,7 @@ const ColorList = ({ colors, updateColors, props }) => {
             />
           </label>
           <div className="button-row">
-            <button type="submit">save</button>
+            <button type="submit">Save</button>
             <button onClick={() => setEditing(false)}>Cancel</button>
           </div>
         </form>
@@ -155,9 +155,6 @@ const ColorList = ({ colors, updateColors, props }) => {
       <div className="button-row">
         <button style={{'background-color': 'red'}} onClick={LogOut}>Log Out</button>
       </div>
-
-      
-      <div className="spacer" />
       
       
     </div>

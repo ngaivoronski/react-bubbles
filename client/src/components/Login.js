@@ -48,27 +48,33 @@ const Login = (props) => {
 
 
   return (
-    <>
+    <div className="home-page">
       <h1>Welcome to the Bubble App!</h1>
-      <div>
+      <div className="login-form">
         <h2>{isLoggedIn ? "LOGGED IN!" : "Please login"}</h2>
         <form onSubmit={login}>
-          <input
-            type="text"
-            name="username"
-            value={credentials.username}
-            onChange={handleChange}
-          />
-          <input
-            type="password"
-            name="password"
-            value={credentials.password}
-            onChange={handleChange}
-          />
+          <div className="input-div">
+            <label htmlFor="username">Username:</label>
+            <input
+              type="text"
+              name="username"
+              value={credentials.username}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="input-div">
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              name="password"
+              value={credentials.password}
+              onChange={handleChange}
+            />
+          </div>
           <button>Log in</button>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 

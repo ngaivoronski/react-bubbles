@@ -21,10 +21,10 @@ const BubblePage = (props) => {
   },[])
 
   return (
-    <>
+    <div className="bubble-page-div">
       <ColorList colors={colorList} updateColors={setColorList} props={props} />
       <Bubbles colors={colorList} />
-    </>
+    </div>
   );
 };
 
